@@ -7,7 +7,14 @@ def project_catalog(request):
 
 def project_product(request):
 
-    return render(request, 'project/product.html', {})
+    context = {
+        'results':[
+           'Home',
+           'Catalog',
+        ]
+    }
+
+    return render(request, 'project/product.html', context)
 
 
 def project_index(request):
