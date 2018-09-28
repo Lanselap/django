@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block page_title %}
+            {% endblock %}
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800|Roboto:400,700,900,900i&amp;subset=cyrillic" rel="stylesheet">
+        {% block page_styles %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="headerInside">
+                    <div class="headerInsideRight">
+                        <ul class="headerInsideRightIcons">
+                                <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                
+                        <div class="headerInsideRightSlide">
+                            <h3>Lorem ipsum dolor </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolorem dolorum facilis ipsum iste saepe sunt ullam voluptas!</p>
+                        </div>
+                
+                        <div class="headerInsideRightBuyButton">
+                            <a href="#">BUY NOW</a>
+                        </div>
+                    </div>
+                    <div class="headerInsideLeft">
+                        <div class="headerInsideLeftBanner">
+                            <h3>WELCOME TO MUSIC-HOUSE</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Aliquid atque cumque dolorum fugit iusto libero nisi nobis optio quo, quos reprehenderit
+                                vel veniam voluptatibus? Aliquam assumenda enim ex repudiandae voluptatem.</p>
+                        </div>
+                        {% block page_breadcrumbs %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+            {% block page_content %}
+            {% endblock %}
+
+            <div class="lining"></div>
+        </div>
+
+        <div class="footer">
+            <div class="footerInside">
+                <div class="footerInsideInfo">
+                    <div class="footerInsideInfoCategory">
+                        <h2 class="footerInsideInfoCategoryHead">Category</h2>
+    
+                        <a href="{% url 'project:index' %}">Home</a>
+                        <a href="#">About us</a>
+                        <a href="#">Shop</a>
+                        <a href="{% url 'project:catalog' %}">Catalog</a>
+                        <a href="#">New collections</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contact</a>
+    
+                    </div>
+                    <div class="footerInsideInfoAccount">
+                        <h2 class="footerInsideInfoCategoryHead">Our Account</h2>
+    
+                        <a href="#">Your Account</a>
+                        <a href="#">Personal information</a>
+                        <a href="#">Addresses</a>
+                        <a href="#">Discount</a>
+                        <a href="#">Orders history</a>
+                        <a href="#">Addresses</a>
+                        <a href="#">Search terms</a>
+    
+                    </div>
+                    <div class="footerInsideInfoSupport">
+                        <h2 class="footerInsideInfoCategoryHead">Our Support</h2>
+    
+                        <a href="#">Site map</a>
+                        <a href="#">Search terms</a>
+                        <a href="#">Advanced search</a>
+                        <a href="#">Mobile</a>
+                        <a href="#">Contact us</a>
+                        <a href="#">Mobile</a>
+                        <a href="#">Addresses</a>
+    
+                    </div>
+                    <div class="footerInsideInfoNewsletter">
+                        <h2 class="footerInsideInfoCategoryHead">Newsletter</h2>
+    
+                        <p>Join thousands of other people subscribe to our news</p>
+    
+                        <form action="index.html" method="post">
+                            <input type="email" placeholder="INSERT EMAIL">
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                        {% block page_footer_img %}
+                        {% endblock %}
+                    </div>
+                    <div class="footerInsideInfoAboutUs">
+                        <h2 class="footerInsideInfoCategoryHead">About Us</h2>
+    
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab assumenda autem corporis eaque,
+                            facilis laboriosam maiores minima possimus quia repellat sapiente totam voluptates!
+                            Beatae cum nobis perspiciatis reiciendis tempore!</p>
+    
+                        <p><b>Телефон:</b>+7 987 457 21 13</p>
+    
+                        <p><b>Email:</b>contact@mail.ru</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <div class="footerInsideBottom">
+                    <div class="footerInsideBottomCopyrigth">
+                        <p>&copy; 2014 MUSIC-HOUSE. All rights reserved - Designed by theuncreativelab.com</p>
+                    </div>
+    
+                    <ul class="footerInsideBottomIcons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fas fa-rss"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>    
