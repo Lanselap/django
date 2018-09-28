@@ -1,234 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Каталог</title>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800|Roboto:400,700,900,900i&amp;subset=cyrillic" rel="stylesheet">
-        <link rel="stylesheet" href="/static/fontawesome-free-5.1.1-web/css/all.min.css">
-        <link rel="stylesheet" href="/static/style.css">
-    </head>
-    <body>
-    <div class="container">
-        <div class="header">
-            <div class="headerInside">
-                <div class="headerInsideRight">
-                    <ul class="headerInsideRightIcons">
-                        <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    </ul>
+{% extends 'master.html' %}
 
-                    <div class="headerInsideRightSlide">
-                        <h3>Lorem ipsum dolor </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolorem dolorum facilis ipsum iste saepe sunt ullam voluptas!</p>
+{% load static %}
+
+{% block page_title %}
+    Каталог
+{% endblock %}
+
+{% block page_styles %}
+    <link rel="stylesheet" href="{% static 'project/fontawesome-free-5.1.1-web/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'project/style.css' %}">
+{% endblock %}
+
+{% block page_breadcrumbs %}
+    <ul class="breadcrumbs">
+        <li><a href="{% url 'project:index' %}">Home</a></li>
+    </ul>
+{% endblock %}
+
+{% block page_content %}
+    <div class="catalog">
+        <h1>Каталог</h1>
+
+
+        {% for product in product %}
+        <div class="productsCatalog">
+            <div class="catalog-productUnit">
+                <div class="catalog-productUnitImg">   
+                    <img src="/media/{{ product.image }}" class="catalog-img" alt="{{ product.short_desc }}">
+                </div>
+                <div class="catalog-productUnitBottom">   
+                    <div class="catalog-productUnitName">{{ product.category.name }}</div>
+                    <div class="catalog-productUnitName">{{ product.name }}</div>
+                    <div class="catalog-productUnitLink">
+                        <a href="{% url 'project:product' %}">подробнее</a>
                     </div>
-
-                    <div class="headerInsideRightBuyButton">
-                        <a href="#">BUY NOW</a>
+                    <div class="catalog-productUnitPrice">
+                        {{ product.price }}
+                    </div>
+                    <div class="catalog-productUnitDiscount">
+                        {{ product.discount }}
                     </div>
                 </div>
-                <div class="headerInsideLeft">
-                    <div class="headerInsideLeftBanner">
-                        <h3>WELCOME TO MUSIC-HOUSE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Aliquid atque cumque dolorum fugit iusto libero nisi nobis optio quo, quos reprehenderit
-                            vel veniam voluptatibus? Aliquam assumenda enim ex repudiandae voluptatem.</p>
-                    </div>
-                    <ul class="breadcrumbs">
-                        <li><a href="/">Home</a></li>
-                    </ul>
-                </div>
-            </div>
+            </div>    
         </div>
-
-        <div class="catalog">
-            <h1>Каталог</h1>
-
-            <div class="productsCatalog">
-                <div class="catalog-productUnit">
-                    <div class="catalog-productUnitImg">
-                        <img src="/static/images/products/CNT41113.jpg" class="catalog-img" alt="Товар 1" title="Товар 1">
-                    </div>
-                    <div class="catalog-productUnitBottom">
-                        <div class="catalog-productUnitName">
-                            Fernandes LE-1Z BLK/ R
-                        </div>
-                        <div class="catalog-productUnitLink">
-                        <a href="/product/">подробнее</a>
-                        </div>
-                        <div class="catalog-productUnitPrice">
-                            12 990 руб.
-                        </div>
-                        <div class="catalog-productUnitDiscount">
-                            14 990 руб.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="catalog-productUnit">
-                    <div class="catalog-productUnitImg">
-                        <img src="/static/images/products/CNT62562.jpg" class="catalog-img" alt="Товар 2" title="Товар 2">
-                    </div>
-                    <div class="catalog-productUnitBottom">
-                        <div class="catalog-productUnitName">
-                            Pearl RS525SC/ C31
-                        </div>
-                        <div class="catalog-productUnitPrice">
-                            35 450 руб.
-                        </div>
-                        <div class="catalog-productUnitDiscount">
-                            39 990 руб.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="catalog-productUnit">
-                    <div class="catalog-productUnitImg">
-                        <img src="/static/images/products/CNT61530.jpg" class="catalog-img" alt="Товар 3" title="Товар 3">
-                    </div>
-                    <div class="catalog-productUnitBottom">
-                        <div class="catalog-productUnitName">
-                            Yamaha P-45B
-                        </div>
-                        <div class="catalog-productUnitPrice">
-                            28 800 руб.
-                        </div>
-                        <div class="catalog-productUnitDiscount">
-                            31 990 руб.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="catalog-productUnit">
-                    <div class="catalog-productUnitImg">
-                        <img src="/static/images/products/CNT33126.jpg" class="catalog-img" alt="Товар 4" title="Товар 4">
-                    </div>
-                    <div class="catalog-productUnitBottom">
-                        <div class="catalog-productUnitName">
-                            Strunal 331W, 4/4
-                        </div>
-                        <div class="catalog-productUnitPrice">
-                            70 883 руб.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="catalog-productUnit">
-                    <div class="catalog-productUnitImg">
-                        <img src="/static/images/products/CNT48041.jpg" class="catalog-img" alt="Товар 5" title="Товар 5">
-                    </div>
-                    <div class="catalog-productUnitBottom">
-                        <div class="catalog-productUnitName">
-                            Strunal 16W 1/8
-                        </div>
-                        <div class="catalog-productUnitPrice">
-                            18 323 руб.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="catalog-productUnit">
-                    <div class="catalog-productUnitImg">
-                        <img src="/static/images/products/CNT45086.jpg" class="catalog-img" alt="Товар 5" title="Товар 5">
-                    </div>
-                    <div class="catalog-productUnitBottom">
-                        <div class="catalog-productUnitName">
-                            Wisemann DAS-400
-                        </div>
-                        <div class="catalog-productUnitPrice">
-                            58 254 руб.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="lining"></div>
+        {% endfor %}
     </div>
+{% endblock %}
 
-    <div class="footer">
-        <div class="footerInside">
-            <div class="footerInsideInfo">
-                <div class="footerInsideInfoCategory">
-                    <h2 class="footerInsideInfoCategoryHead">Category</h2>
-
-                    <a href="/">Home</a>
-                    <a href="#">About us</a>
-                    <a href="#">Shop</a>
-                    <a href="/catalog/">Catalog</a>
-                    <a href="#">New collections</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Contact</a>
-
-                </div>
-                <div class="footerInsideInfoAccount">
-                    <h2 class="footerInsideInfoCategoryHead">Our Account</h2>
-
-                    <a href="#">Your Account</a>
-                    <a href="#">Personal information</a>
-                    <a href="#">Addresses</a>
-                    <a href="#">Discount</a>
-                    <a href="#">Orders history</a>
-                    <a href="#">Addresses</a>
-                    <a href="#">Search terms</a>
-
-                </div>
-                <div class="footerInsideInfoSupport">
-                    <h2 class="footerInsideInfoCategoryHead">Our Support</h2>
-
-                    <a href="#">Site map</a>
-                    <a href="#">Search terms</a>
-                    <a href="#">Advanced search</a>
-                    <a href="#">Mobile</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Mobile</a>
-                    <a href="#">Addresses</a>
-
-                </div>
-                <div class="footerInsideInfoNewsletter">
-                    <h2 class="footerInsideInfoCategoryHead">Newsletter</h2>
-
-                    <p>Join thousands of other people subscribe to our news</p>
-
-                    <form action="index.html" method="post">
-                        <input type="email" placeholder="INSERT EMAIL">
-                        <input type="submit" value="SUBMIT">
-                    </form>
-
-                    <img src="/static/images/payment.png" alt="">
-                </div>
-                <div class="footerInsideInfoAboutUs">
-                    <h2 class="footerInsideInfoCategoryHead">About Us</h2>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab assumenda autem corporis eaque,
-                        facilis laboriosam maiores minima possimus quia repellat sapiente totam voluptates!
-                        Beatae cum nobis perspiciatis reiciendis tempore!</p>
-
-                    <p><b>Телефон:</b>+7 987 457 21 13</p>
-
-                    <p><b>Email:</b>contact@mail.ru</p>
-                </div>
-            </div>
-        </div>
-        <div class="footerBottom">
-            <div class="footerInsideBottom">
-                <div class="footerInsideBottomCopyrigth">
-                    <p>&copy; 2014 MUSIC-HOUSE. All rights reserved - Designed by theuncreativelab.com</p>
-                </div>
-
-                <ul class="footerInsideBottomIcons">
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                    <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fas fa-rss"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    </body>
-</html>
+{% block page_footer_img %}
+    <img src="{% static 'project/images/payment.png' %}" alt="">
+{% endblock %}

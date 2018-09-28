@@ -1,246 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Подробное описание товара 1</title>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800|Roboto:400,700,900,900i&amp;subset=cyrillic" rel="stylesheet">
-        <link rel="stylesheet" href="/static/fontawesome-free-5.1.1-web/css/all.min.css">
-        <link rel="stylesheet" href="/static/style.css">
-    </head>
-    <body>
-    <div class="container">
-        <div class="header">
-            <div class="headerInside">
-                <div class="headerInsideRight">
-                    <ul class="headerInsideRightIcons">
-                        <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    </ul>
+{% extends 'master.html' %}
 
-                    <div class="headerInsideRightSlide">
-                        <h3>Lorem ipsum dolor </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolorem dolorum facilis ipsum iste saepe sunt ullam voluptas!</p>
-                    </div>
+{% load static %}
 
-                    <div class="headerInsideRightBuyButton">
-                        <a href="#">BUY NOW</a>
-                    </div>
+{% block page_title %}
+    Подробное описание товара 1
+{% endblock %}
+
+{% block page_styles %}
+    <link rel="stylesheet" href="{% static 'project/fontawesome-free-5.1.1-web/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'project/style.css' %}">
+{% endblock %}
+
+{% block page_breadcrumbs %}
+    <ul class="breadcrumbs">
+        <li><a href="{% url 'project:index' %}">Home</a></li>
+        <li><a href="{% url 'project:catalog' %}">Catalog</a></li>
+    </ul>
+{% endblock %}
+
+{% block page_content %}
+    <div class="product-page">
+
+        <div class="product-pageInside">
+            <h1 class="product-pageInsideHeader">Fernandes LE-1Z BLK/ R</h1>
+
+            <div class="product-pageUnit">
+                <div class="product-pageUnitImg">
+                    <a href="{% static 'project/images/products/CNT41113.jpg' %}" target="_blank">
+                        <img src="{% static 'project/images/products/CNT41113.jpg' %}" class="product-img" alt="Товар 1" title="Товар 1"></a>
+
                 </div>
-                <div class="headerInsideLeft">
-                    <div class="headerInsideLeftBanner">
-                        <h3>WELCOME TO MUSIC-HOUSE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Aliquid atque cumque dolorum fugit iusto libero nisi nobis optio quo, quos reprehenderit
-                            vel veniam voluptatibus? Aliquam assumenda enim ex repudiandae voluptatem.</p>
+                <div class="product-pageUnit-shortDesc">
+                    <h3 class="product-pageUnit-shortDescHeader">Краткое описание товара:</h3>
+
+                    <div class="product-pageUnit-shortDescText">
+                        <p>Fernandes LE-1Z – это серия бюджетных реплик моделей Stratocaster
+                            (как со схемами звукоснимателей SSS, так и HSS). Серия существует уже много лет и за
+                            это время стала "базой" для множества гитаристов. А все потому, что умеренная цена
+                            сочетается с жесточайшим контролем качества со стороны специалистов японской гитарной
+                            компании Fernandes Guitars. Надежный, певучий и недорогой Страт - основа любой гитарной коллекции.
+                        </p>
                     </div>
-                    <ul class="breadcrumbs">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/catalog/">Catalog</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-page">
-
-            <div class="product-pageInside">
-                <h1 class="product-pageInsideHeader">Fernandes LE-1Z BLK/ R</h1>
-
-                <div class="product-pageUnit">
-                    <div class="product-pageUnitImg">
-                        <a href="/static/images/products/CNT41113.jpg" target="_blank">
-                            <img src="/static/images/products/CNT41113.jpg" class="product-img" alt="Товар 1" title="Товар 1"></a>
-
-                    </div>
-                    <div class="product-pageUnit-shortDesc">
-                        <h3 class="product-pageUnit-shortDescHeader">Краткое описание товара:</h3>
-
-                        <div class="product-pageUnit-shortDescText">
-                            <p>Fernandes LE-1Z – это серия бюджетных реплик моделей Stratocaster
-                                (как со схемами звукоснимателей SSS, так и HSS). Серия существует уже много лет и за
-                                это время стала "базой" для множества гитаристов. А все потому, что умеренная цена
-                                сочетается с жесточайшим контролем качества со стороны специалистов японской гитарной
-                                компании Fernandes Guitars. Надежный, певучий и недорогой Страт - основа любой гитарной коллекции.
-                            </p>
+                    <div class="product-pageUnitBuy">
+                        <div class="catalog-productUnitPrice">
+                            12 990 руб.
                         </div>
-                        <div class="product-pageUnitBuy">
-                            <div class="catalog-productUnitPrice">
-                                12 990 руб.
-                            </div>
-                            <div class="catalog-productUnitDiscount">
-                                14 990 руб.
-                            </div>
+                        <div class="catalog-productUnitDiscount">
+                            14 990 руб.
+                        </div>
 
-                            <div class="product-pageUnitBuyButton">
-                                <a href="/product/" >Купить</a>
-                            </div>
+                        <div class="product-pageUnitBuyButton">
+                            <a href="#" >Купить</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="table">
-                    <h3>Характеристики товара:</h3>
-                    <table>
-                        <tr>
-                            <th colspan="2">Корпус:</th>
-                            <td>Ольха</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Гриф:</th>
-                            <td>Клён, на болтах </td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Накладка:</th>
-                            <td>Палисандр </td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Мензура:</th>
-                            <td>25,5" (648mm)</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Лады</th>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Колки:</th>
-                            <td>Vintage style</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Тремоло:</th>
-                            <td>Vintage style на 6 винтах </td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Звукосниматели:</th>
-                            <td>HSS</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Темблоблок:</th>
-                            <td>1 громкость , 2 тембра, 5-позиционный переключатель</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Цвет:</th>
-                            <td>чёрный</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Производитель:</th>
-                            <td>Тайвань</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="product-pageInside-fullDesc">
-                    <h3 class="product-fullDescHeader">Подробное описание товара:</h3>
-
-                    <p class="product-fullDescText">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid fugiat ipsum libero nesciunt
-                        non quia reprehenderit tenetur vel. Incidunt ipsa ipsam iusto quas sed, ullam voluptatibus
-                        voluptatum. At in ipsum magni quia? Asperiores aspernatur consectetur, culpa eligendi
-                        est inventore laborum sed? Delectus eum eveniet ipsa soluta tempore? Aliquam autem consequuntur
-                        dolores expedita illo nihil nobis nulla obcaecati officia perspiciatis praesentium repellendus,
-                        repudiandae saepe. Aperiam at eius fuga labore officiis sapiente sunt veniam.
-                        At commodi dolor dolore est expedita fugit id, magni natus nulla omnis provident
-                        quas quibusdam quisquam quo recusandae rem repellendus sunt unde. Adipisci alias
-                        animi architecto asperiores assumenda culpa cumque debitis dicta dignissimos,
-                        distinctio eaque eius eum, ex expedita fugit in iste laboriosam modi natus nihil nulla
-                        possimus quas quidem quo recusandae repellat sunt tempore voluptas voluptatem voluptatibus.
-                        Ab inventore rem vero voluptates. Cum dolorem eaque eligendi error est excepturi inventore ipsa
-                        obcaecati, omnis perferendis sunt suscipit. Asperiores aspernatur cum delectus doloribus ea,
-                        et facilis id libero nesciunt nisi numquam officia ratione similique sit voluptate voluptates
-                        voluptatum! Accusantium dolorem doloribus eaque eveniet ex ipsam, nostrum obcaecati quo saepe
-                        similique sunt totam vero. Aliquam aperiam doloribus ea, eaque fugit id ipsum iusto mollitia
-                        nostrum placeat sed tenetur veritatis voluptas.
-                    </p>
-                </div>
             </div>
-        </div>
 
-        <div class="lining"></div>
-    </div>
-
-    <div class="footer">
-        <div class="footerInside">
-            <div class="footerInsideInfo">
-                <div class="footerInsideInfoCategory">
-                    <h2 class="footerInsideInfoCategoryHead">Category</h2>
-
-                    <a href="/">Home</a>
-                    <a href="#">About us</a>
-                    <a href="#">Shop</a>
-                    <a href="/catalog/">Catalog</a>
-                    <a href="#">New collections</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Contact</a>
-
-                </div>
-                <div class="footerInsideInfoAccount">
-                    <h2 class="footerInsideInfoCategoryHead">Our Account</h2>
-
-                    <a href="#">Your Account</a>
-                    <a href="#">Personal information</a>
-                    <a href="#">Addresses</a>
-                    <a href="#">Discount</a>
-                    <a href="#">Orders history</a>
-                    <a href="#">Addresses</a>
-                    <a href="#">Search terms</a>
-
-                </div>
-                <div class="footerInsideInfoSupport">
-                    <h2 class="footerInsideInfoCategoryHead">Our Support</h2>
-
-                    <a href="#">Site map</a>
-                    <a href="#">Search terms</a>
-                    <a href="#">Advanced search</a>
-                    <a href="#">Mobile</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Mobile</a>
-                    <a href="#">Addresses</a>
-
-                </div>
-                <div class="footerInsideInfoNewsletter">
-                    <h2 class="footerInsideInfoCategoryHead">Newsletter</h2>
-
-                    <p>Join thousands of other people subscribe to our news</p>
-
-                    <form action="index.html" method="post">
-                        <input type="email" placeholder="INSERT EMAIL">
-                        <input type="submit" value="SUBMIT">
-                    </form>
-
-                    <img src="/static/images/payment.png" alt="">
-                </div>
-                <div class="footerInsideInfoAboutUs">
-                    <h2 class="footerInsideInfoCategoryHead">About Us</h2>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab assumenda autem corporis eaque,
-                        facilis laboriosam maiores minima possimus quia repellat sapiente totam voluptates!
-                        Beatae cum nobis perspiciatis reiciendis tempore!</p>
-
-                    <p><b>Телефон:</b>+7 987 457 21 13</p>
-
-                    <p><b>Email:</b>contact@mail.ru</p>
-                </div>
+            <div class="table">
+                <h3>Характеристики товара:</h3>
+                <table>
+                    <tr>
+                        <th colspan="2">Корпус:</th>
+                        <td>Ольха</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Гриф:</th>
+                        <td>Клён, на болтах </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Накладка:</th>
+                        <td>Палисандр </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Мензура:</th>
+                        <td>25,5" (648mm)</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Лады</th>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Колки:</th>
+                        <td>Vintage style</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Тремоло:</th>
+                        <td>Vintage style на 6 винтах </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Звукосниматели:</th>
+                        <td>HSS</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Темблоблок:</th>
+                        <td>1 громкость , 2 тембра, 5-позиционный переключатель</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Цвет:</th>
+                        <td>чёрный</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Производитель:</th>
+                        <td>Тайвань</td>
+                    </tr>
+                </table>
             </div>
-        </div>
-        <div class="footerBottom">
-            <div class="footerInsideBottom">
-                <div class="footerInsideBottomCopyrigth">
-                    <p>&copy; 2014 MUSIC-HOUSE. All rights reserved - Designed by theuncreativelab.com</p>
-                </div>
 
-                <ul class="footerInsideBottomIcons">
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                    <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fas fa-rss"></i></a></li>
-                </ul>
+            <div class="product-pageInside-fullDesc">
+                <h3 class="product-fullDescHeader">Подробное описание товара:</h3>
+
+                <p class="product-fullDescText">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid fugiat ipsum libero nesciunt
+                    non quia reprehenderit tenetur vel. Incidunt ipsa ipsam iusto quas sed, ullam voluptatibus
+                    voluptatum. At in ipsum magni quia? Asperiores aspernatur consectetur, culpa eligendi
+                    est inventore laborum sed? Delectus eum eveniet ipsa soluta tempore? Aliquam autem consequuntur
+                    dolores expedita illo nihil nobis nulla obcaecati officia perspiciatis praesentium repellendus,
+                    repudiandae saepe. Aperiam at eius fuga labore officiis sapiente sunt veniam.
+                    At commodi dolor dolore est expedita fugit id, magni natus nulla omnis provident
+                    quas quibusdam quisquam quo recusandae rem repellendus sunt unde. Adipisci alias
+                    animi architecto asperiores assumenda culpa cumque debitis dicta dignissimos,
+                    distinctio eaque eius eum, ex expedita fugit in iste laboriosam modi natus nihil nulla
+                    possimus quas quidem quo recusandae repellat sunt tempore voluptas voluptatem voluptatibus.
+                    Ab inventore rem vero voluptates. Cum dolorem eaque eligendi error est excepturi inventore ipsa
+                    obcaecati, omnis perferendis sunt suscipit. Asperiores aspernatur cum delectus doloribus ea,
+                    et facilis id libero nesciunt nisi numquam officia ratione similique sit voluptate voluptates
+                    voluptatum! Accusantium dolorem doloribus eaque eveniet ex ipsam, nostrum obcaecati quo saepe
+                    similique sunt totam vero. Aliquam aperiam doloribus ea, eaque fugit id ipsum iusto mollitia
+                    nostrum placeat sed tenetur veritatis voluptas.
+                </p>
             </div>
         </div>
     </div>
-    </body>
-</html>
+{% endblock %}
+
+{% block page_footer_img %}
+    <img src="{% static 'project/images/payment.png' %}" alt="">
+{% endblock %}

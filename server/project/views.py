@@ -1,13 +1,28 @@
 from django.shortcuts import render
 
+from .models import Category, Product
+
 def project_catalog(request):
 
-    return render(request, 'project/catalog.html', {})
+    product = Product.objects.all()[:8]
+
+    context = {
+        'product':product,
+    }
+
+    return render(request, 'project/catalog.html', context)
 
 
 def project_product(request):
 
-    return render(request, 'project/product.html', {})
+    context = {
+        'results':[
+           'Home',
+           'Catalog',
+        ]
+    }
+
+    return render(request, 'project/product.html', context)
 
 
 def project_index(request):
